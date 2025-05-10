@@ -1,1 +1,1 @@
-ssssssssssssssssssssssssssssssssssgit
+Здесь находится пет проект по курсу qa guru 

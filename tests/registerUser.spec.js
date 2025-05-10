@@ -12,13 +12,13 @@ test.describe ('Группа тестов на авторизацию', () => {
         const headerPage = new HeaderPage(page);
 
         await headerPage.buttonHomeClick();
-        await expect(page).toHaveURL('https://realworld.qa.guru/#/');
+        await expect(page).toHaveURL(process.env.SITE_START);
 
         await headerPage.buttonLoginClick();
-        await expect(page).toHaveURL('https://realworld.qa.guru/#/login');
+        await expect(page).toHaveURL(process.env.SITE_LOGIN);
 
         await headerPage.buttonSignUpClick();
-        await expect(page).toHaveURL('https://realworld.qa.guru/#/register');
+        await expect(page).toHaveURL(process.env.SITE_REGISTER);
 
     });
 
@@ -37,7 +37,7 @@ test.describe ('Группа тестов на авторизацию', () => {
         const headerPage = new HeaderPage(page);
 
         await headerPage.buttonLoginClick();
-        await expect(page).toHaveURL('https://realworld.qa.guru/#/login');
+        await expect(page).toHaveURL(process.env.SITE_LOGIN);
 
         await loginPage.loginInputForm(randomUser.email)
         await loginPage.passwordInputForm(randomUser.password)
@@ -52,7 +52,7 @@ test.describe ('Группа тестов на авторизацию', () => {
         const headerPage = new HeaderPage(page);
 
         await headerPage.buttonLoginClick();
-        await expect(page).toHaveURL('https://realworld.qa.guru/#/login');
+        await expect(page).toHaveURL(process.env.SITE_LOGIN);
         //console.log(process.env.LOGIN)
         await loginPage.loginInputForm(process.env.LOGIN)
         await loginPage.passwordInputForm(process.env.PASSWORD)
