@@ -7,6 +7,8 @@ export const test = base.extend({
             .addMail()
             .addPassword()
             .addName()
+            .addAboutMe()
+            .addPicture()
         await use(user)
     }
 })

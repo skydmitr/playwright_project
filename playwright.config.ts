@@ -24,7 +24,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://realworld.qa.guru/',
     trace: 'on-first-retry',
-    headless: true,
+    headless: false,
     screenshot: 'only-on-failure'
   },
   projects: [
@@ -32,16 +32,16 @@ export default defineConfig({
     //   name: 'setup',
     //   testMatch: /.*\.setup\.ts/, // авторизация
     // },
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+    //{
+      // name: 'chromium',
+      // use: { ...devices['Desktop Chrome'] },
       //dependencies: ['setup'], // авторизация
-    },
+    //},
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
+    {
+      name: 'Microsoft Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    }
 
   ],
 });
